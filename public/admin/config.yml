@@ -1,0 +1,144 @@
+backend:
+  name: git-gateway
+  branch: main
+
+publish_mode: editorial_workflow
+media_folder: public/images/uploads
+public_folder: /images/uploads
+site_url: https://oshomysteryschoolnepal.com
+display_url: https://oshomysteryschoolnepal.com
+logo_url: /icon.svg
+
+collections:
+  - name: gallery
+    label: Gallery
+    label_singular: Gallery Photo
+    folder: content/gallery
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    sortable_fields: [displayOrder, title, date]
+    fields:
+      - { label: Photo Title, name: title, widget: string }
+      - { label: Upload Photo, name: image, widget: image, required: false, hint: "Use an optimized JPG or WebP, ideally under 2 MB." }
+      - { label: Photo Category, name: category, widget: select, options: [Meditation, Celebration, Nature, Retreats, Community, Our Space] }
+      - { label: Caption, name: caption, widget: text, required: false }
+      - { label: Date, name: date, widget: datetime, format: YYYY-MM-DD, required: false }
+      - { label: Show on Homepage, name: featured, widget: boolean, default: false }
+      - { label: Alternative Text, name: alt, widget: string, hint: "Briefly describe the photo for visitors using a screen reader." }
+      - { label: Display Order, name: displayOrder, widget: number, value_type: int, min: 1, default: 10 }
+      - { label: Image Shape, name: aspect, widget: select, options: ["3 / 2", "4 / 5", "1 / 1"], default: "3 / 2" }
+
+  - name: events
+    label: Events
+    label_singular: Event
+    folder: content/events
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    fields:
+      - { label: Event Name, name: title, widget: string }
+      - { label: Start Date, name: startDate, widget: datetime, format: YYYY-MM-DD, required: false }
+      - { label: End Date, name: endDate, widget: datetime, format: YYYY-MM-DD, required: false }
+      - { label: Short Description, name: shortDescription, widget: text }
+      - { label: Full Description, name: body, widget: markdown, required: false }
+      - { label: Upload Photo, name: image, widget: image, required: false }
+      - { label: Location, name: location, widget: string, required: false }
+      - { label: Event Status, name: status, widget: select, options: [Upcoming, Open, Full, Completed, Schedule update], default: Upcoming }
+      - { label: Registration Link, name: registrationLink, widget: string, required: false }
+      - { label: Show on Homepage, name: featured, widget: boolean, default: false }
+      - { label: Display Order, name: displayOrder, widget: number, value_type: int, min: 1, default: 10 }
+
+  - name: retreats
+    label: Retreats
+    label_singular: Retreat
+    folder: content/retreats
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    fields:
+      - { label: Retreat Name, name: title, widget: string }
+      - { label: Short Description, name: shortDescription, widget: text }
+      - { label: Full Description, name: body, widget: markdown, required: false }
+      - { label: Start Date, name: startDate, widget: datetime, format: YYYY-MM-DD, required: false }
+      - { label: End Date, name: endDate, widget: datetime, format: YYYY-MM-DD, required: false }
+      - { label: Duration, name: duration, widget: string, required: false }
+      - { label: Upload Photo, name: image, widget: image, required: false }
+      - { label: Availability, name: availability, widget: select, options: [Open, Limited, Full, Completed, Schedule update], default: Schedule update }
+      - { label: Registration Link, name: registrationLink, widget: string, required: false }
+      - { label: Show on Homepage, name: featured, widget: boolean, default: false }
+      - { label: Display Order, name: displayOrder, widget: number, value_type: int, min: 1, default: 10 }
+
+  - name: meditations
+    label: Meditations
+    label_singular: Meditation
+    folder: content/meditations
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    fields:
+      - { label: Meditation Name, name: title, widget: string }
+      - { label: Short Description, name: shortDescription, widget: text }
+      - { label: Full Description, name: body, widget: markdown, required: false }
+      - { label: Duration, name: duration, widget: string, required: false }
+      - { label: Energy Level, name: energyLevel, widget: select, options: [Gentle, Moderate, High], required: false }
+      - { label: Upload Photo, name: image, widget: image, required: false }
+      - { label: Display Order, name: displayOrder, widget: number, value_type: int, min: 1, default: 10 }
+
+  - name: testimonials
+    label: Testimonials
+    label_singular: Testimonial
+    folder: content/testimonials
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    fields:
+      - { label: Name, name: name, widget: string }
+      - { label: Country, name: country, widget: string, required: false }
+      - { label: Quote, name: quote, widget: text }
+      - { label: Photo, name: image, widget: image, required: false }
+      - { label: Show on Homepage, name: featured, widget: boolean, default: false }
+      - { label: Display Order, name: displayOrder, widget: number, value_type: int, min: 1, default: 10 }
+
+  - name: stay
+    label: Stay & Accommodation
+    label_singular: Stay Section
+    folder: content/stay
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    fields:
+      - { label: Section Title, name: title, widget: string }
+      - { label: Description, name: shortDescription, widget: text }
+      - { label: Upload Photo, name: image, widget: image, required: false }
+      - { label: Display Order, name: displayOrder, widget: number, value_type: int, min: 1, default: 10 }
+      - { label: Image Shape, name: aspect, widget: select, options: ["16 / 9", "4 / 5", "1 / 1"], default: "4 / 5" }
+
+  - name: pages
+    label: Page Content
+    files:
+      - label: Homepage
+        name: home
+        file: content/pages/home.md
+        fields:
+          - { label: Hero Heading, name: heroTitle, widget: string }
+          - { label: Hero Subtitle, name: heroSubtitle, widget: text }
+          - { label: Introduction, name: intro, widget: text }
+
+  - name: settings
+    label: Site Settings
+    files:
+      - label: Contact & Site Details
+        name: site
+        file: content/settings/site.md
+        fields:
+          - { label: Phone, name: phone, widget: string, required: false }
+          - { label: WhatsApp, name: whatsapp, widget: string, required: false }
+          - { label: Email, name: email, widget: string, required: false }
+          - { label: Address, name: address, widget: text, required: false }
+          - { label: Facebook, name: facebook, widget: string, required: false }
+          - { label: Instagram, name: instagram, widget: string, required: false }
+          - { label: Google Maps Link, name: mapsLink, widget: string, required: false }
+          - { label: Booking Link, name: bookingLink, widget: string, default: /visit }
+          - { label: Announcement Message, name: announcement, widget: string, required: false }
+          - { label: Footer Text, name: footerText, widget: text }
