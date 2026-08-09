@@ -36,6 +36,12 @@ export function getPage(slug: string): Record<string, string> {
   return matter(fs.readFileSync(file, "utf8")).data as Record<string, string>;
 }
 
+export function getPageData<T extends Record<string, unknown>>(slug: string): Partial<T> {
+  const file = path.join(contentRoot, "pages", `${slug}.md`);
+  if (!fs.existsSync(file)) return {};
+  return matter(fs.readFileSync(file, "utf8")).data as Partial<T>;
+}
+
 export function formatDate(date?: string): string {
   if (!date) return "Date to be announced";
   const parsed = new Date(`${date}T00:00:00`);

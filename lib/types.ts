@@ -24,11 +24,17 @@ export type ContentEntry = {
   startDate?: string;
   endDate?: string;
   duration?: string;
+  price?: string;
   energyLevel?: string;
   location?: string;
   status?: string;
   availability?: string;
   registrationLink?: string;
+  schedule?: string[];
+  included?: string[];
+  suitableFor?: string;
+  accommodation?: string;
+  whatToBring?: string[];
   caption?: string;
   featured?: boolean;
   displayOrder?: number;

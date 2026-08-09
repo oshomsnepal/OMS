@@ -7,7 +7,7 @@ media_folder: public/images/uploads
 public_folder: /images/uploads
 site_url: https://oshomysteryschoolnepal.com
 display_url: https://oshomysteryschoolnepal.com
-logo_url: /icon.svg
+logo_url: /images/brand/osho-mystery-school-logo.png
 
 collections:
   - name: gallery
@@ -40,11 +40,31 @@ collections:
       - { label: Event Name, name: title, widget: string }
       - { label: Start Date, name: startDate, widget: datetime, format: YYYY-MM-DD, required: false }
       - { label: End Date, name: endDate, widget: datetime, format: YYYY-MM-DD, required: false }
+      - { label: Duration, name: duration, widget: string, required: false, hint: "For example: One day or 6:00 PM–9:00 PM." }
+      - { label: Event Category, name: category, widget: select, options: [Festival, Intensive, Meditation Day, Celebration, Community], required: false }
       - { label: Short Description, name: shortDescription, widget: text }
       - { label: Full Description, name: body, widget: markdown, required: false }
       - { label: Upload Photo, name: image, widget: image, required: false }
+      - { label: Photo Alternative Text, name: alt, widget: string, required: false }
       - { label: Location, name: location, widget: string, required: false }
       - { label: Event Status, name: status, widget: select, options: [Upcoming, Open, Full, Completed, Schedule update], default: Upcoming }
+      - { label: Contribution or Price, name: price, widget: string, required: false, hint: "Enter the display wording, including currency, or write Free/Donation." }
+      - label: Schedule
+        name: schedule
+        widget: list
+        required: false
+        field: { label: Schedule Item, name: item, widget: string }
+      - label: What Is Included
+        name: included
+        widget: list
+        required: false
+        field: { label: Included Item, name: item, widget: string }
+      - { label: Who It Is For, name: suitableFor, widget: text, required: false }
+      - label: What to Bring
+        name: whatToBring
+        widget: list
+        required: false
+        field: { label: Item, name: item, widget: string }
       - { label: Registration Link, name: registrationLink, widget: string, required: false }
       - { label: Show on Homepage, name: featured, widget: boolean, default: false }
       - { label: Display Order, name: displayOrder, widget: number, value_type: int, min: 1, default: 10 }
@@ -64,7 +84,27 @@ collections:
       - { label: End Date, name: endDate, widget: datetime, format: YYYY-MM-DD, required: false }
       - { label: Duration, name: duration, widget: string, required: false }
       - { label: Upload Photo, name: image, widget: image, required: false }
+      - { label: Photo Alternative Text, name: alt, widget: string, required: false }
+      - { label: Location, name: location, widget: string, required: false }
       - { label: Availability, name: availability, widget: select, options: [Open, Limited, Full, Completed, Schedule update], default: Schedule update }
+      - { label: Contribution or Price, name: price, widget: string, required: false, hint: "Enter the display wording, including currency, or write Contact us." }
+      - { label: Who It Is For, name: suitableFor, widget: text, required: false }
+      - label: Daily Schedule
+        name: schedule
+        widget: list
+        required: false
+        field: { label: Schedule Item, name: item, widget: string }
+      - label: What Is Included
+        name: included
+        widget: list
+        required: false
+        field: { label: Included Item, name: item, widget: string }
+      - { label: Accommodation Details, name: accommodation, widget: text, required: false }
+      - label: What to Bring
+        name: whatToBring
+        widget: list
+        required: false
+        field: { label: Item, name: item, widget: string }
       - { label: Registration Link, name: registrationLink, widget: string, required: false }
       - { label: Show on Homepage, name: featured, widget: boolean, default: false }
       - { label: Display Order, name: displayOrder, widget: number, value_type: int, min: 1, default: 10 }
@@ -83,6 +123,7 @@ collections:
       - { label: Duration, name: duration, widget: string, required: false }
       - { label: Energy Level, name: energyLevel, widget: select, options: [Gentle, Moderate, High], required: false }
       - { label: Upload Photo, name: image, widget: image, required: false }
+      - { label: Photo Alternative Text, name: alt, widget: string, required: false }
       - { label: Display Order, name: displayOrder, widget: number, value_type: int, min: 1, default: 10 }
 
   - name: testimonials
@@ -147,15 +188,6 @@ collections:
           - { label: Mystery School Image Alternative Text, name: schoolImageAlt, widget: string, required: false }
           - { label: OSHO Portrait, name: oshoPortraitImage, widget: image, required: false, hint: "Square image." }
           - { label: OSHO Portrait Alternative Text, name: oshoPortraitAlt, widget: string, required: false }
-
-      - label: Meditations Page Images
-        name: meditations
-        file: content/pages/meditations.md
-        fields:
-          - { label: Hero Image, name: heroImage, widget: image, required: false, hint: "Wide landscape image, ideally 16:9." }
-          - { label: Hero Image Alternative Text, name: heroAlt, widget: string, required: false }
-          - { label: Meditation Practice Image, name: practiceImage, widget: image, required: false, hint: "Landscape image, ideally 4:3." }
-          - { label: Meditation Practice Image Alternative Text, name: practiceImageAlt, widget: string, required: false }
 
       - label: Retreats Page Images
         name: retreats
