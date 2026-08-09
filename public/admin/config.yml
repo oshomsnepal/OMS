@@ -203,8 +203,6 @@ collections:
         fields:
           - { label: Hero Image, name: heroImage, widget: image, required: false, hint: "Wide landscape image, ideally 16:9." }
           - { label: Hero Image Alternative Text, name: heroAlt, widget: string, required: false }
-          - { label: Location Image, name: locationImage, widget: image, required: false, hint: "Landscape image or map illustration, ideally 4:3." }
-          - { label: Location Image Alternative Text, name: locationImageAlt, widget: string, required: false }
 
   - name: settings
     label: Site Settings
@@ -220,6 +218,7 @@ collections:
           - { label: Facebook, name: facebook, widget: string, required: false }
           - { label: Instagram, name: instagram, widget: string, required: false }
           - { label: Google Maps Link, name: mapsLink, widget: string, required: false }
+          - { label: Google Map Embed URL, name: mapEmbedUrl, widget: string, required: false, hint: "Use the Google Maps embed URL for the interactive map on the Visit page." }
           - { label: Booking Link, name: bookingLink, widget: string, default: /visit }
           - { label: Announcement Message, name: announcement, widget: string, required: false }
           - { label: Footer Text, name: footerText, widget: text }

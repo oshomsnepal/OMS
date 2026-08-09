@@ -6,6 +6,7 @@ export type SiteSettings = {
   facebook?: string;
   instagram?: string;
   mapsLink?: string;
+  mapEmbedUrl?: string;
   bookingLink?: string;
   announcement?: string;
   footerText?: string;
