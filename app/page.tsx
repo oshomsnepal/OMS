@@ -7,10 +7,10 @@ import { SectionWave } from "@/components/shared/SectionWave";
 import { getPage } from "@/lib/content";
 
 const journey = [
-  { title: "Meditate", copy: "Active and silent techniques created for the modern mind.", icon: Wind, aspect: "4 / 5", tone: "terracotta" as const, surface: "bg-[#f5e8e1]" },
-  { title: "Go Within", copy: "Cultivate deep silence and a clear, witnessing awareness.", icon: Heart, aspect: "1 / 1", tone: "sage" as const, surface: "bg-[#e9eee6]" },
-  { title: "Celebrate", copy: "Express life through dance, music, creativity, and joy.", icon: Music2, aspect: "4 / 5", tone: "gold" as const, surface: "bg-[#f5edcf]" },
-  { title: "Rest in Nature", copy: "Slow down among trees, open sky, and mountain air.", icon: Trees, aspect: "1 / 1", tone: "forest" as const, surface: "bg-[#e4ebe5]" },
+  { title: "Meditate", copy: "Active and silent techniques created for the modern mind.", icon: Wind, aspect: "4 / 5", tone: "terracotta" as const, surface: "bg-[#f5e8e1]", imageKey: "meditateImage", altKey: "meditateImageAlt" },
+  { title: "Go Within", copy: "Cultivate deep silence and a clear, witnessing awareness.", icon: Heart, aspect: "1 / 1", tone: "sage" as const, surface: "bg-[#e9eee6]", imageKey: "goWithinImage", altKey: "goWithinImageAlt" },
+  { title: "Celebrate", copy: "Express life through dance, music, creativity, and joy.", icon: Music2, aspect: "4 / 5", tone: "gold" as const, surface: "bg-[#f5edcf]", imageKey: "celebrateImage", altKey: "celebrateImageAlt" },
+  { title: "Rest in Nature", copy: "Slow down among trees, open sky, and mountain air.", icon: Trees, aspect: "1 / 1", tone: "forest" as const, surface: "bg-[#e4ebe5]", imageKey: "restInNatureImage", altKey: "restInNatureImageAlt" },
 ];
 
 export default function HomePage() {
@@ -33,7 +33,7 @@ export default function HomePage() {
           <p className="lede mt-7">{page.intro ?? "In the peaceful foothills near Kathmandu, life takes on a quieter rhythm. Here, meditation meets nature, silence meets celebration, and each day offers space to explore what is essential."}</p>
           <p className="mt-5 text-[var(--muted)]">Come for a morning meditation, a residential retreat, or simply a few days away from the noise.</p>
         </div>
-        <ResponsiveImage label="Nature Image" aspect="3 / 4" placeholderTone="sage" className="relative z-10 rounded-[8px] shadow-[0_26px_70px_rgba(26,36,26,.15)]" sizes="(max-width: 768px) 100vw, 50vw" />
+        <ResponsiveImage src={page.introImage} alt={page.introImageAlt ?? "The natural surroundings of OSHO Mystery School Nepal"} label="Nature Image" aspect="3 / 4" placeholderTone="sage" className="relative z-10 rounded-[8px] shadow-[0_26px_70px_rgba(26,36,26,.15)]" sizes="(max-width: 768px) 100vw, 50vw" />
         </div>
       </section>
       <section id="journey" className="section relative overflow-hidden bg-[linear-gradient(145deg,#f1f2eb_0%,#f8efe8_52%,#f6efd8_100%)] pb-44 md:pb-52">
@@ -45,9 +45,9 @@ export default function HomePage() {
             <h2 className="headline text-[var(--forest)]">Your Journey Here</h2>
           </div>
           <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-4">
-            {journey.map(({ title, copy, icon: Icon, aspect, tone, surface }) => (
+            {journey.map(({ title, copy, icon: Icon, aspect, tone, surface, imageKey, altKey }) => (
               <article key={title} className={`group overflow-hidden rounded-[8px] ${surface} shadow-[0_16px_45px_rgba(45,59,45,.09)] transition duration-300 hover:-translate-y-1.5 hover:shadow-[0_22px_55px_rgba(45,59,45,.15)]`}>
-                <ResponsiveImage label={`${title} Image`} aspect={aspect} placeholderTone={tone} className="w-full" sizes="(max-width: 768px) 100vw, 25vw" />
+                <ResponsiveImage src={page[imageKey]} alt={page[altKey] ?? `${title} at OSHO Mystery School Nepal`} label={`${title} Image`} aspect={aspect} placeholderTone={tone} className="w-full" sizes="(max-width: 768px) 100vw, 25vw" />
                 <div className="p-6">
                   <span className="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/65 text-[var(--terracotta-bright)]"><Icon size={22} aria-hidden="true" /></span>
                   <h3 className="text-2xl text-[var(--forest)]">{title}</h3>

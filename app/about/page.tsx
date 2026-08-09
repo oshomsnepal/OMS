@@ -4,6 +4,7 @@ import { PageHero } from "@/components/shared/PageHero";
 import { ResponsiveImage } from "@/components/shared/ResponsiveImage";
 import { SectionHeading } from "@/components/shared/SectionHeading";
 import { SectionOrnament } from "@/components/shared/SectionOrnament";
+import { getPage } from "@/lib/content";
 
 export const metadata: Metadata = { title: "About", description: "Discover the philosophy and atmosphere of OSHO Mystery School Nepal." };
 
@@ -15,21 +16,22 @@ const philosophy = [
 ];
 
 export default function AboutPage() {
+  const page = getPage("about");
   return (
     <>
-      <PageHero title="A School for the Inner Journey" copy="Meditation without belief, awareness without doctrine, and a living invitation to experience for yourself." label="About Hero Image" accent="sage" />
+      <PageHero title="A School for the Inner Journey" copy="Meditation without belief, awareness without doctrine, and a living invitation to experience for yourself." label="About Hero Image" image={page.heroImage} imageAlt={page.heroAlt ?? "OSHO Mystery School Nepal"} accent="sage" />
       <section className="section container grid items-center gap-16 lg:grid-cols-12">
         <div className="lg:col-span-7">
           <SectionHeading eyebrow="Our story" title="The Mystery School Story" />
           <p className="lede">OSHO Mystery School Nepal is a space for people to slow down, become present, and explore meditation in a direct, experiential way.</p>
           <p className="mt-5 max-w-2xl text-[var(--muted)]">The school brings together active meditation, silence, nature, creativity, and community. Visitors are welcome to arrive exactly as they are—curious, tired, joyful, uncertain—and discover their own way inward.</p>
         </div>
-        <div className="lg:col-span-5"><ResponsiveImage label="Mystery School Image" aspect="3 / 4" className="rounded-[8px]" /></div>
+        <div className="lg:col-span-5"><ResponsiveImage src={page.schoolImage} alt={page.schoolImageAlt ?? "The Mystery School and its natural surroundings"} label="Mystery School Image" aspect="3 / 4" className="rounded-[8px]" /></div>
       </section>
       <section className="section section-low relative overflow-hidden">
         <SectionOrnament motif="angles" position="bottom-left" tone="sage" opacity={0.3} />
         <div className="container relative z-10 grid items-center gap-16 lg:grid-cols-2">
-          <ResponsiveImage label="OSHO Portrait" aspect="1 / 1" className="rounded-[8px]" />
+          <ResponsiveImage src={page.oshoPortraitImage} alt={page.oshoPortraitAlt ?? "OSHO"} label="OSHO Portrait" aspect="1 / 1" className="rounded-[8px]" />
           <div>
             <SectionHeading eyebrow="The vision" title="Who is OSHO?" />
             <p className="lede">OSHO was a contemporary mystic whose approach invited people to move beyond borrowed beliefs and discover truth through their own awareness.</p>

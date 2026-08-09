@@ -126,6 +126,85 @@ collections:
           - { label: Hero Image, name: heroImage, widget: image, required: false, hint: "Use a wide landscape image, ideally 2400 × 1350 px or a similar 16:9 ratio." }
           - { label: Hero Image Alternative Text, name: heroAlt, widget: string, required: false, hint: "Describe the photograph briefly for visitors using a screen reader." }
           - { label: Introduction, name: intro, widget: text }
+          - { label: Introduction Image, name: introImage, widget: image, required: false, hint: "Portrait image, ideally a 3:4 ratio." }
+          - { label: Introduction Image Alternative Text, name: introImageAlt, widget: string, required: false }
+          - { label: Meditate Image, name: meditateImage, widget: image, required: false, hint: "Portrait image, ideally a 4:5 ratio." }
+          - { label: Meditate Image Alternative Text, name: meditateImageAlt, widget: string, required: false }
+          - { label: Go Within Image, name: goWithinImage, widget: image, required: false, hint: "Square image." }
+          - { label: Go Within Image Alternative Text, name: goWithinImageAlt, widget: string, required: false }
+          - { label: Celebrate Image, name: celebrateImage, widget: image, required: false, hint: "Portrait image, ideally a 4:5 ratio." }
+          - { label: Celebrate Image Alternative Text, name: celebrateImageAlt, widget: string, required: false }
+          - { label: Rest in Nature Image, name: restInNatureImage, widget: image, required: false, hint: "Square image." }
+          - { label: Rest in Nature Image Alternative Text, name: restInNatureImageAlt, widget: string, required: false }
+
+      - label: About Page Images
+        name: about
+        file: content/pages/about.md
+        fields:
+          - { label: Hero Image, name: heroImage, widget: image, required: false, hint: "Wide landscape image, ideally 16:9." }
+          - { label: Hero Image Alternative Text, name: heroAlt, widget: string, required: false }
+          - { label: Mystery School Image, name: schoolImage, widget: image, required: false, hint: "Portrait image, ideally a 3:4 ratio." }
+          - { label: Mystery School Image Alternative Text, name: schoolImageAlt, widget: string, required: false }
+          - { label: OSHO Portrait, name: oshoPortraitImage, widget: image, required: false, hint: "Square image." }
+          - { label: OSHO Portrait Alternative Text, name: oshoPortraitAlt, widget: string, required: false }
+
+      - label: Meditations Page Images
+        name: meditations
+        file: content/pages/meditations.md
+        fields:
+          - { label: Hero Image, name: heroImage, widget: image, required: false, hint: "Wide landscape image, ideally 16:9." }
+          - { label: Hero Image Alternative Text, name: heroAlt, widget: string, required: false }
+          - { label: Meditation Practice Image, name: practiceImage, widget: image, required: false, hint: "Landscape image, ideally 4:3." }
+          - { label: Meditation Practice Image Alternative Text, name: practiceImageAlt, widget: string, required: false }
+
+      - label: Retreats Page Images
+        name: retreats
+        file: content/pages/retreats.md
+        fields:
+          - { label: Hero Image, name: heroImage, widget: image, required: false, hint: "Wide landscape image, ideally 16:9." }
+          - { label: Hero Image Alternative Text, name: heroAlt, widget: string, required: false }
+          - { label: Residential Program Image, name: residentialImage, widget: image, required: false, hint: "Portrait image, ideally a 4:5 ratio." }
+          - { label: Residential Program Image Alternative Text, name: residentialImageAlt, widget: string, required: false }
+          - { label: Full Moon Meditation Image, name: fullMoonImage, widget: image, required: false, hint: "Wide landscape image, ideally 16:9." }
+          - { label: Full Moon Meditation Image Alternative Text, name: fullMoonImageAlt, widget: string, required: false }
+          - { label: Music Gathering Image, name: musicImage, widget: image, required: false, hint: "Landscape image, ideally 4:3." }
+          - { label: Music Gathering Image Alternative Text, name: musicImageAlt, widget: string, required: false }
+
+      - label: Stay Page Images
+        name: stay
+        file: content/pages/stay.md
+        fields:
+          - { label: Hero Image, name: heroImage, widget: image, required: false, hint: "Wide landscape image, ideally 16:9." }
+          - { label: Hero Image Alternative Text, name: heroAlt, widget: string, required: false }
+          - { label: Meditation Hall Image, name: meditationHallImage, widget: image, required: false, hint: "Square image." }
+          - { label: Meditation Hall Image Alternative Text, name: meditationHallImageAlt, widget: string, required: false }
+          - { label: Garden and Dining Image, name: gardenDiningImage, widget: image, required: false, hint: "Landscape image, ideally 4:3." }
+          - { label: Garden and Dining Image Alternative Text, name: gardenDiningImageAlt, widget: string, required: false }
+
+      - label: Gallery Page Images
+        name: gallery
+        file: content/pages/gallery.md
+        fields:
+          - { label: Hero Image, name: heroImage, widget: image, required: false, hint: "Wide landscape image, ideally 16:9." }
+          - { label: Hero Image Alternative Text, name: heroAlt, widget: string, required: false }
+          - { label: Featured Story Image, name: featuredImage, widget: image, required: false, hint: "Very wide landscape image, ideally 16:7." }
+          - { label: Featured Story Image Alternative Text, name: featuredImageAlt, widget: string, required: false }
+
+      - label: Events Page Images
+        name: events
+        file: content/pages/events.md
+        fields:
+          - { label: Hero Image, name: heroImage, widget: image, required: false, hint: "Wide landscape image, ideally 16:9." }
+          - { label: Hero Image Alternative Text, name: heroAlt, widget: string, required: false }
+
+      - label: Visit Page Images
+        name: visit
+        file: content/pages/visit.md
+        fields:
+          - { label: Hero Image, name: heroImage, widget: image, required: false, hint: "Wide landscape image, ideally 16:9." }
+          - { label: Hero Image Alternative Text, name: heroAlt, widget: string, required: false }
+          - { label: Location Image, name: locationImage, widget: image, required: false, hint: "Landscape image or map illustration, ideally 4:3." }
+          - { label: Location Image Alternative Text, name: locationImageAlt, widget: string, required: false }
 
   - name: settings
     label: Site Settings
