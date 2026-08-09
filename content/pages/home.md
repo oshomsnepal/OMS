@@ -2,7 +2,7 @@
 heroTitle: Come Back to Yourself
 heroSubtitle: A mountain sanctuary near Kathmandu for meditation, awareness,
   celebration, and the simple joy of being alive.
-heroImage: https://i0.wp.com/oshoisyours.wordpress.com/wp-content/uploads/2011/02/48.jpeg?w=2500&h=&ssl=1
+heroImage: /images/uploads/ea32821-2f7-7585-0fcc-56ac858f127e_osho-img.jpg
 heroAlt: OSHO Mystery School Nepal in the foothills near Kathmandu
 intro: In the peaceful foothills near Kathmandu, life takes on a quieter rhythm.
   Here, meditation meets nature, silence meets celebration, and each day offers
