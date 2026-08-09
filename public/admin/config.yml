@@ -123,6 +123,8 @@ collections:
         fields:
           - { label: Hero Heading, name: heroTitle, widget: string }
           - { label: Hero Subtitle, name: heroSubtitle, widget: text }
+          - { label: Hero Image, name: heroImage, widget: image, required: false, hint: "Use a wide landscape image, ideally 2400 × 1350 px or a similar 16:9 ratio." }
+          - { label: Hero Image Alternative Text, name: heroAlt, widget: string, required: false, hint: "Describe the photograph briefly for visitors using a screen reader." }
           - { label: Introduction, name: intro, widget: text }
 
   - name: settings

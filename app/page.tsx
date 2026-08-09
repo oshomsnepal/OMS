@@ -17,7 +17,12 @@ export default function HomePage() {
   const page = getPage("home");
   return (
     <>
-      <HomeHero title={page.heroTitle ?? "Come Back to Yourself"} subtitle={page.heroSubtitle ?? "A mountain sanctuary near Kathmandu for meditation, awareness, celebration, and the simple joy of being alive."} />
+      <HomeHero
+        title={page.heroTitle ?? "Come Back to Yourself"}
+        subtitle={page.heroSubtitle ?? "A mountain sanctuary near Kathmandu for meditation, awareness, celebration, and the simple joy of being alive."}
+        image={page.heroImage}
+        imageAlt={page.heroAlt ?? "OSHO Mystery School Nepal in the foothills near Kathmandu"}
+      />
       <section className="section relative overflow-hidden bg-[radial-gradient(circle_at_12%_20%,rgba(253,145,113,.14),transparent_28%),radial-gradient(circle_at_88%_72%,rgba(138,154,138,.16),transparent_30%),var(--surface)]">
         <SectionOrnament motif="bloom" position="top-right" tone="terracotta" opacity={0.3} className="md:scale-110" />
         <SectionOrnament motif="angles" position="bottom-left" tone="sage" opacity={0.3} className="scale-90" />

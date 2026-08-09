@@ -6,6 +6,8 @@ type Props = {
   title: string;
   copy: string;
   label: string;
+  image?: string;
+  imageAlt?: string;
   children?: ReactNode;
   light?: boolean;
   height?: string;
@@ -13,7 +15,7 @@ type Props = {
   accent?: "sage" | "terracotta" | "gold" | "forest";
 };
 
-export function PageHero({ title, copy, label, children, light = true, height = "min-h-[760px]", vibrant = false, accent }: Props) {
+export function PageHero({ title, copy, label, image, imageAlt = "", children, light = true, height = "min-h-[760px]", vibrant = false, accent }: Props) {
   const accentOverlays = {
     sage: light
       ? "linear-gradient(125deg, rgba(26,36,26,.68), rgba(77,103,78,.44), rgba(138,154,138,.3))"
@@ -30,7 +32,7 @@ export function PageHero({ title, copy, label, children, light = true, height = 
   };
   return (
     <section className={`relative flex ${height} items-center justify-center overflow-hidden pt-24`}>
-      <ResponsiveImage label={label} aspect="16 / 9" priority placeholderTone={accent ?? "neutral"} className="absolute inset-0 h-full w-full rounded-none" sizes="100vw" />
+      <ResponsiveImage src={image} alt={imageAlt} label={label} aspect="16 / 9" priority placeholderTone={accent ?? "neutral"} className="absolute inset-0 h-full w-full rounded-none" sizes="100vw" />
       <div
         className={`absolute inset-0 ${vibrant ? "bg-[linear-gradient(125deg,rgba(26,36,26,.74)_4%,rgba(154,68,42,.4)_54%,rgba(212,175,55,.25)_100%)]" : accent ? "" : light ? "bg-gradient-to-b from-[var(--forest)]/20 via-[var(--forest)]/25 to-[var(--forest)]/55" : "bg-[var(--surface)]/30"}`}
         style={accent ? { background: accentOverlays[accent] } : undefined}
